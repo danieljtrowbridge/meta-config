@@ -10,6 +10,11 @@ on:
     branches:
       - main
   workflow_call:
+    inputs:
+      path:
+        default: .
+        required: false
+        type: string
 
 jobs:
   yamllint:
@@ -28,4 +33,4 @@ jobs:
         with:
           submodules: recursive
       - name: Check YAML formatting
-        run: yamllint .
+        run: yamllint ${{ inputs.path || '.' }}
