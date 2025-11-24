@@ -29,7 +29,7 @@ jobs:
       - name: Install yamllint
         run: pip install --user yamllint
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: recursive
       - name: Check YAML formatting
